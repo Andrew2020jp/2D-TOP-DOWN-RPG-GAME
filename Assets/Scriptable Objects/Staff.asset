@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17094cf5fb49dc24498f0367d1ff5dc2, type: 3}
+  m_Name: Staff
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 959379866706287775, guid: 76f5a884ce4945a459cf3d2cba5885ae, type: 3}
+  weaponCooldown: 1.2
+  weaponDamage: 2
+  weaponRange: 8
