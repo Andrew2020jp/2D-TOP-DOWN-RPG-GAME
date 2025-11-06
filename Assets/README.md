@@ -1,7 +1,7 @@
 # Introduction:
     This is a project by Andrew Wong Wei Chee, Ng Kuan Kiet and Ooi Yun Teng based on the tutorial on [this playlist on YouTube](https://youtube.com/playlist?list=PL6bqhqO0Ba776ksb3F9P_xmUMT9WvmfFT)
     Resources and assets are taken from the tutorial and itch.io:
-        1. 
+        1. Crystal Knight: https://daxelheart.itch.io/crystal-knight
         2. 
         3. 
 

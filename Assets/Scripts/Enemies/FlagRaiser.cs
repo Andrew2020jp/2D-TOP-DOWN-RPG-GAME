@@ -1,18 +1,38 @@
 using UnityEngine;
 
-// This component's only job is to tell the GameManager when this object is destroyed.
-// Add this script ONLY to the one special enemy you want to track.
+// This component tells the FlagHolder when this object is destroyed.
+// It now supports both the *permanent flag* and the *respawn cooldown* system.
 public class FlagRaiser : MonoBehaviour
 {
-    // OnDestroy is a built-in Unity function that is automatically called
-    // when a GameObject is destroyed.
+    [Header("Respawn Cooldown")]
+    [Tooltip("The unique ID for this boss, e.g., 'GoblinKing'. Must match an ID in the FlagHolder.")]
+    public string bossId;
+
+    [Header("Permanent Flag")]
+    [Tooltip("Check this ONLY if this boss should trigger the *permanent* 'isSpecialEnemyDefeated' flag (for path blockers, etc.)")]
+    public bool isSpecialPathBlockerBoss = false;
+
+
     private void OnDestroy()
     {
-        // We check if an Instance exists in case we are quitting the application,
-        // which can sometimes destroy objects in a weird order.
-        if (FlagHolder.Instance != null)
+        // Check if an Instance exists in case we are quitting the application.
+        if (FlagHolder.Instance == null)
         {
-            Debug.Log("Special Enemy has been destroyed. Raising the flag!");
+            return;
+        }
+
+        // --- 1. Handle Respawn Cooldown ---
+        // If this boss has an ID, record its defeat time.
+        if (!string.IsNullOrEmpty(bossId))
+        {
+            FlagHolder.Instance.RecordBossDefeat(bossId);
+        }
+
+        // --- 2. Handle Permanent Flag ---
+        // If this is the special boss, set the permanent flag.
+        if (isSpecialPathBlockerBoss)
+        {
+            Debug.Log("Special Enemy (Path Blocker) has been destroyed. Raising the permanent flag!");
             FlagHolder.Instance.isSpecialEnemyDefeated = true;
         }
     }
