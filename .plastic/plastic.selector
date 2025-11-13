@@ -1,4 +1,0 @@
-repository "2D TOP DOWN RPG GAME/2D TOP DOWN RPG GAME@15668948799096@cloud"
-  path "/"
-    br "/main"
-    co "/main"
