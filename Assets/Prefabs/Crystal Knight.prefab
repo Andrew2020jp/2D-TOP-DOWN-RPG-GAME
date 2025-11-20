@@ -23,6 +23,9 @@ GameObject:
   - component: {fileID: 1405921943383554169}
   - component: {fileID: 9008931107477704565}
   - component: {fileID: 4055734313501293883}
+  - component: {fileID: 8106237956174357611}
+  - component: {fileID: 6747401555089787126}
+  - component: {fileID: 1863982731306561991}
   m_Layer: 0
   m_Name: Crystal Knight
   m_TagString: Boss
@@ -171,12 +174,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313c6cad4932398428bd6497b981fc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 100
-  attackRange: 2
-  stopMovingWhileAttacking: 1
-  roamChangeDirFloat: 1
+  chaseTime: 5
+  restTime: 2
+  attackRange: 10
+  stopMovingWhileAttacking: 0
   enemyType: {fileID: 1890480323289665380}
-  attackCooldown: 2
+  attackCooldown: 1
 --- !u!114 &1884668757239369192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,8 +217,8 @@ MonoBehaviour:
   startingDistance: 0.3
   timeBetweenBursts: 0.1
   restTime: 1
-  stagger: 0
-  oscillate: 0
+  stagger: 1
+  oscillate: 1
 --- !u!114 &6899522553254689523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bbd194a817c374b876af8c94d7fb87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilForce: 1
+  recoilForce: 2
 --- !u!114 &4055734313501293883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,3 +333,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetGameObject: {fileID: 0}
+--- !u!114 &8106237956174357611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386173992268281517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec9ba7c9e3faa349bdd7bfb0435af29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldCoin: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
+  healthGlobe: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
+  staminaGlobe: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
+--- !u!114 &6747401555089787126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386173992268281517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f56bcf84eac56e46a51388808d36f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossId: CrystalKnight
+  isSpecialPathBlockerBoss: 1
+--- !u!114 &1863982731306561991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386173992268281517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c1aa086fd95584d99607b6625764f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossId: CrystalKnight
