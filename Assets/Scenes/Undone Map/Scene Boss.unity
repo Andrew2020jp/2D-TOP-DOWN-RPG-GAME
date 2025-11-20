@@ -17224,11 +17224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 2.2312815
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4549695
+      value: -1.45286
       objectReference: {fileID: 0}
     - target: {fileID: 4513549438124435186, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_Name
@@ -20097,30 +20097,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal Knight
       objectReference: {fileID: 0}
-    - target: {fileID: 1890480323289665380, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: stagger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890480323289665380, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: oscillate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509483901654011601, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: attackRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509483901654011601, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: attackCooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509483901654011601, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: detectionRange
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3509483901654011601, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: stopMovingWhileAttacking
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4055734313501293883, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
       propertyPath: targetGameObject
       value: 
@@ -20165,79 +20141,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6704535849327752529, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: startingHealth
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6899522553254689523, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: moveSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008931107477704565, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      propertyPath: recoilForce
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 386173992268281517, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 814042144957093451}
-    - targetCorrespondingSourceObject: {fileID: 386173992268281517, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 814042144957093436}
-    - targetCorrespondingSourceObject: {fileID: 386173992268281517, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 814042144957093467}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
---- !u!1 &814042144957093435 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 386173992268281517, guid: 9fd080899776c0f40aa13abb6410b495, type: 3}
-  m_PrefabInstance: {fileID: 814042144957093434}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &814042144957093436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814042144957093435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f56bcf84eac56e46a51388808d36f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossId: CrystalKnight
-  isSpecialPathBlockerBoss: 1
---- !u!114 &814042144957093451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814042144957093435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec9ba7c9e3faa349bdd7bfb0435af29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldCoin: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
-  healthGlobe: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
-  staminaGlobe: {fileID: 8326743631552891254, guid: e3fb9a23140e514459283397dbadce8c, type: 3}
---- !u!114 &814042144957093467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814042144957093435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63c1aa086fd95584d99607b6625764f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossId: CrystalKnight
 --- !u!212 &913050599295762179
 SpriteRenderer:
   m_ObjectHideFlags: 0
