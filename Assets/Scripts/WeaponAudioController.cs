@@ -7,50 +7,35 @@ public class WeaponAudioController : MonoBehaviour
     public AudioSource weaponAudioSource;
 
     [Tooltip("The specific sound clip to play when attacking.")]
-    public AudioClip slashSound;
+    public AudioClip soundClip;
 
-    [Header("Input Settings")]
-    [Tooltip("The key or mouse button that triggers the attack.")]
-    public KeyCode attackTrigger = KeyCode.Mouse0; // Default is Left Click
-
+    [Header("Pitch Settings")]
     [Tooltip("Optional: Randomize pitch slightly for variety?")]
     public bool randomizePitch = true;
 
-    [Range(0.8f, 1.2f)]
+    [Range(-3.0f, 2.9f)]
     public float pitchRangeMin = 0.9f;
-    [Range(0.8f, 1.2f)]
+    [Range(-2.9f, 3.0f)]
     public float pitchRangeMax = 1.1f;
 
-    void Update()
-    {
-        // Check if the configured key was pressed down this frame
-        if (Input.GetKeyDown(attackTrigger))
-        {
-            PlayAttackSound();
-        }
-    }
+    // Note: Update() and Input checks are removed. 
+    // This script now waits for another script to call PlayAttackSound().
 
-    void PlayAttackSound()
+    public void PlayAttackSound()
     {
-        // Safety check to ensure we have an AudioSource and a Clip assigned
-        if (weaponAudioSource != null && slashSound != null)
+        // Safety check
+        if (weaponAudioSource != null && soundClip != null)
         {
-            // Optional: Change pitch slightly every time to make it sound less repetitive
             if (randomizePitch)
             {
                 weaponAudioSource.pitch = Random.Range(pitchRangeMin, pitchRangeMax);
             }
             else
             {
-                weaponAudioSource.pitch = 1.0f; // Reset to normal if randomization is off
+                weaponAudioSource.pitch = 1.0f;
             }
 
-            // PlayOneShot allows the sound to overlap if you click fast (doesn't cut off the previous sound)
-            weaponAudioSource.PlayOneShot(slashSound);
-        }
-        else
-        {
-            Debug.LogWarning("WeaponAudioController: Missing AudioSource or AudioClip assignment!");
+            weaponAudioSource.PlayOneShot(soundClip);
         }
     }
 }

@@ -11,6 +11,7 @@ public class Sword : MonoBehaviour, IWeapon
 
     private Transform weaponCollider;
     private Animator myAnimator;
+    public WeaponAudioController audioController;
 
     private GameObject slashAnim;
 
@@ -41,6 +42,10 @@ public class Sword : MonoBehaviour, IWeapon
         weaponCollider.gameObject.SetActive(true);
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
+        if (audioController != null)
+        {
+            audioController.PlayAttackSound();
+        }
     }
 
     public void DoneAttackingAnimEvent()

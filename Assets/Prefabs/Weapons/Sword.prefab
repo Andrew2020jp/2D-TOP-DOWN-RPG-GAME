@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5905613843346177188}
   - component: {fileID: 7561331607311356187}
   - component: {fileID: 9210438094090490673}
+  - component: {fileID: 6384232090488717758}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -124,6 +125,7 @@ MonoBehaviour:
   slashAnimSpawnPoint: {fileID: 3132708939472841067}
   swordAttackCD: 0.5
   weaponInfo: {fileID: 11400000, guid: 13c8f30744d221b48a5ac86315b83a71, type: 2}
+  audioController: {fileID: 6384232090488717758}
 --- !u!82 &9210438094090490673
 AudioSource:
   m_ObjectHideFlags: 0
@@ -134,8 +136,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 88b1cbe3caa3fee4b8b103b5edd7aba9, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -220,3 +222,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6384232090488717758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559269650776647684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e28e4ae751dccc04185269a70505ee59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAudioSource: {fileID: 9210438094090490673}
+  soundClip: {fileID: 8300000, guid: 323e15cfe809e114ab92c9f4b25e8bc2, type: 3}
+  randomizePitch: 1
+  pitchRangeMin: 0.9
+  pitchRangeMax: 1.1
