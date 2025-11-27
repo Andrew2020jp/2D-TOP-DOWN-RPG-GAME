@@ -8,6 +8,7 @@ public class BroadSword : MonoBehaviour, IWeapon
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private float broadSwordAttackCD = 5f;
     [SerializeField] private WeaponInfo weaponInfo;
+    public WeaponAudioController audioController;
 
     private Transform weaponCollider;
     private Animator myAnimator;
@@ -41,6 +42,12 @@ public class BroadSword : MonoBehaviour, IWeapon
         weaponCollider.gameObject.SetActive(true);
         slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
         slashAnim.transform.parent = this.transform.parent;
+        Debug.Log("Start playing audio?");
+        if (audioController != null)
+        {
+            Debug.Log("Playing Audio");
+            audioController.PlayAttackSound();
+        }
     }
 
     public void DoneAttackingAnimEvent()
