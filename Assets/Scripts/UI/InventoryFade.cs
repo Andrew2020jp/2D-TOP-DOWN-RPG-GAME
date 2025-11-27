@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryFade : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player;
     [SerializeField] private float fadedAlpla = 0.05f;  // Opacity of the UI
     [SerializeField] private float fadeSpeed = 5f;
     [SerializeField] private float bufferZone = 30f;    // To prevent flickering
@@ -14,6 +14,16 @@ public class InventoryFade : MonoBehaviour
 
     void Start()
     {
+        
+    }
+
+    void Awake()
+    {
+        // auto find player using tag
+        GameObject p = GameObject.FindGameObjectWithTag("Player");
+        if (p != null)
+            player = p.transform;
+
         canvasGroup = GetComponent<CanvasGroup>();
         rectTransform = GetComponent<RectTransform>();
     }
