@@ -58,7 +58,15 @@ public class Pickup : MonoBehaviour
         if (other.gameObject.GetComponent<PlayerController>())
         {
             DetectPickupType();
-            Destroy(gameObject);
+            PickupAudioController audioCtrl = GetComponent<PickupAudioController>();
+            if (audioCtrl != null)
+            {
+                audioCtrl.PlaySoundAndDestroy();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
