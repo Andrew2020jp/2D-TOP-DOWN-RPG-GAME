@@ -12,6 +12,32 @@ public class ToRandomScene : MonoBehaviour
     // A check to prevent the trigger from being activated multiple times
     private bool loadStarted = false;
 
+    [Header("Audio Settings")]
+    [Tooltip("If empty, it will try to load 'AreaExitDefault' from the Resources folder.")]
+    [SerializeField] private AudioClip exitSound;
+
+    private AudioSource areaSource;
+
+    private void Start()
+    {
+        // 1. AUTO-SETUP: Find AudioSource, or Add one if it's missing
+        areaSource = GetComponent<AudioSource>();
+
+        if (areaSource == null)
+        {
+            // Automatically add the component so you don't have to edit 100 objects
+            areaSource = gameObject.AddComponent<AudioSource>();
+            areaSource.playOnAwake = false;
+        }
+
+        // 2. AUTO-SETUP: If no sound is dragged in, load a default one
+        if (exitSound == null)
+        {
+            // Looks for a file named "AreaExitDefault" inside any "Resources" folder
+            exitSound = Resources.Load<AudioClip>("AreaExitDefault");
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<PlayerController>() && !loadStarted)
