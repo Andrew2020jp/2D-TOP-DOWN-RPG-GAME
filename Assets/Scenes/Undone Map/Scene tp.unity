@@ -36770,7 +36770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2247e3fc2632b114abe0e1221522aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 62772034}
   fadedAlpla: 0.05
   fadeSpeed: 5
   bufferZone: 30
