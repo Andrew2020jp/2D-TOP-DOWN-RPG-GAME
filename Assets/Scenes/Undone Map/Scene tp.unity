@@ -3793,6 +3793,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7061964517086184261, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
+      propertyPath: weaponInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: ce02c9204c0ecd14983ac68b5ac7f864, type: 2}
     - target: {fileID: 7658403118641832521, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
