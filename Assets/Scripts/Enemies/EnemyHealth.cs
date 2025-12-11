@@ -43,7 +43,17 @@ public class EnemyHealth : MonoBehaviour
         {
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             GetComponent<PickUpSpawner>().DropItems();
-            Destroy(gameObject);
+            EnemyAudioController audioCtrl = GetComponent<EnemyAudioController>();
+
+            if (audioCtrl != null)
+            {
+                audioCtrl.PlayDeathSoundAndDestroy();
+            }
+            else
+            {
+                // Fallback if you forgot to add the script
+                Destroy(gameObject);
+            }
         }
     }
 }
