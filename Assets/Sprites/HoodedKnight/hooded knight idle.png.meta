@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1c9d379616801a4989ff32dc36757af
+guid: bfac884f56897264992405e631ea7b70
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecb4f10a04c4554499b9cb25c054c82f
-      internalID: 1931493239
+      spriteID: b824123851a1cef41bdde1a82de8a552
+      internalID: -1656858795
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6c60b8ce49a0ed4ba2435ddf0b5a57f
-      internalID: -404524508
+      spriteID: 995345b3d51f4e04aae05c37a2b0f7ee
+      internalID: 78707520
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11141a9b40cecc1479a302c97b67f096
-      internalID: 1120985053
+      spriteID: 33d08ea661a8aa9459d42c7a03eac350
+      internalID: -1410802424
       vertices: []
       indices: 
       edges: []
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95ec6b97a52b59a4294b896631ca3306
-      internalID: 2133617758
+      spriteID: b9f3a6896072e0248ad832d208eb5e3d
+      internalID: 498539977
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06577298d51d7c40add793a7b8c4d0e
-      internalID: -1918051319
+      spriteID: 95d7299817e5a7548b964a083b55771a
+      internalID: -1383482849
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc9bd9c82836a2a4d96e520554f430d1
-      internalID: 1109514458
+      spriteID: b02cfbced101a6b4eb080105f0d86d3d
+      internalID: 873863499
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38caf5339309bed4c9715ef3f9a89ba6
-      internalID: 411374797
+      spriteID: 935246009522cb14ea86f73926dd720b
+      internalID: -1781243304
       vertices: []
       indices: 
       edges: []
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01831f847740fde488aa4c552268a49e
-      internalID: -1073837963
+      spriteID: 9c9f1752eb4ccd64db676541574881ff
+      internalID: 1454293887
       vertices: []
       indices: 
       edges: []
@@ -275,14 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hooded knight idle_0: 1931493239
-      hooded knight idle_1: -404524508
-      hooded knight idle_2: 1120985053
-      hooded knight idle_3: 2133617758
-      hooded knight idle_4: -1918051319
-      hooded knight idle_5: 1109514458
-      hooded knight idle_6: 411374797
-      hooded knight idle_7: -1073837963
+      hooded knight idle_0: -1656858795
+      hooded knight idle_1: 78707520
+      hooded knight idle_2: -1410802424
+      hooded knight idle_3: 498539977
+      hooded knight idle_4: -1383482849
+      hooded knight idle_5: 873863499
+      hooded knight idle_6: -1781243304
+      hooded knight idle_7: 1454293887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
