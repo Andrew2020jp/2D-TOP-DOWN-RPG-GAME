@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 33775dffb49e06648abb7c7016e0ff27
+guid: b1c9d379616801a4989ff32dc36757af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat-idle-outline_0
+      name: hooded knight idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613da711d500f364c8024950245ae052
-      internalID: -2053364563
+      spriteID: ecb4f10a04c4554499b9cb25c054c82f
+      internalID: 1931493239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat-idle-outline_1
+      name: hooded knight idle_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 100
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7014e4d50ad518340b900dbdfbfdf303
-      internalID: 1931940860
+      spriteID: a6c60b8ce49a0ed4ba2435ddf0b5a57f
+      internalID: -404524508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat-idle-outline_2
+      name: hooded knight idle_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 200
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 063be64a1461d5a40b44fa7a19252fc8
-      internalID: 437344360
+      spriteID: 11141a9b40cecc1479a302c97b67f096
+      internalID: 1120985053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat-idle-outline_3
+      name: hooded knight idle_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 300
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6382e69da3364408cf4f6f7f00c497
-      internalID: -854919750
+      spriteID: 95ec6b97a52b59a4294b896631ca3306
+      internalID: 2133617758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat-idle-outline_4
+      name: hooded knight idle_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 400
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8612067c0be284eb48960300e87ef9
-      internalID: 190531781
+      spriteID: e06577298d51d7c40add793a7b8c4d0e
+      internalID: -1918051319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat-idle-outline_5
+      name: hooded knight idle_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 500
         y: 0
-        width: 32
-        height: 32
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbed37594e36edf4bb8eb3fd77eb5871
-      internalID: -1255081568
+      spriteID: cc9bd9c82836a2a4d96e520554f430d1
+      internalID: 1109514458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hooded knight idle_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38caf5339309bed4c9715ef3f9a89ba6
+      internalID: 411374797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hooded knight idle_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01831f847740fde488aa4c552268a49e
+      internalID: -1073837963
       vertices: []
       indices: 
       edges: []
@@ -233,12 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat-idle-outline_0: -2053364563
-      rat-idle-outline_1: 1931940860
-      rat-idle-outline_2: 437344360
-      rat-idle-outline_3: -854919750
-      rat-idle-outline_4: 190531781
-      rat-idle-outline_5: -1255081568
+      hooded knight idle_0: 1931493239
+      hooded knight idle_1: -404524508
+      hooded knight idle_2: 1120985053
+      hooded knight idle_3: 2133617758
+      hooded knight idle_4: -1918051319
+      hooded knight idle_5: 1109514458
+      hooded knight idle_6: 411374797
+      hooded knight idle_7: -1073837963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
