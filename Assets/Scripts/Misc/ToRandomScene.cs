@@ -44,6 +44,20 @@ public class ToRandomScene : MonoBehaviour
         {
             loadStarted = true; // Mark that the load process has begun
 
+            if (areaSource != null)
+            {
+                // Priority 1: Use the specific clip assigned in this script
+                if (exitSound != null)
+                {
+                    areaSource.PlayOneShot(exitSound);
+                }
+                // Priority 2: Use the clip assigned in the Inspector's Audio Source component
+                else if (areaSource.clip != null)
+                {
+                    areaSource.PlayOneShot(areaSource.clip);
+                }
+            }
+
             // --- Core Change: Randomly select an index ---
             // This will pick a random number between 0 and the number of scenes available.
             // For two scenes, this will be either 0 or 1.
