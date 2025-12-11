@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5799675534454131434}
   - component: {fileID: 3112254711543579708}
   - component: {fileID: 7717945816700566831}
+  - component: {fileID: -787326183622962447}
   m_Layer: 0
   m_Name: GoldBullet
   m_TagString: Untagged
@@ -292,3 +293,15 @@ MonoBehaviour:
   particleOnHitPrefabVFX: {fileID: 1100103239531299760, guid: 9fc4a58c5b2eaf34091c0ff95b9fb51c, type: 3}
   isEnemyProjectile: 0
   projectileRange: 10
+--- !u!114 &-787326183622962447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508427429411214225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5b5e4e0f9ff3548ac8919535c26e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
