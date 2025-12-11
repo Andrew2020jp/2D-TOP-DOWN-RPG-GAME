@@ -3565,6 +3565,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 18078152020347848, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1083398425244050224, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
       propertyPath: weaponInfo
       value: 
@@ -3793,6 +3797,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4743017935685481604, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 30761d57269b8284dad67ecbac4f58c2, type: 3}
+    - target: {fileID: 7061964517086184261, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
+      propertyPath: weaponInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: ce02c9204c0ecd14983ac68b5ac7f864, type: 2}
     - target: {fileID: 7658403118641832521, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -46196,6 +46208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Scene1
   sceneTransitionName: E1Entry
+  exitSound: {fileID: 0}
 --- !u!61 &1787841545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49317,6 +49330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Scene kk
   sceneTransitionName: ruinsEntry
+  exitSound: {fileID: 0}
 --- !u!61 &2084650913
 BoxCollider2D:
   m_ObjectHideFlags: 0
