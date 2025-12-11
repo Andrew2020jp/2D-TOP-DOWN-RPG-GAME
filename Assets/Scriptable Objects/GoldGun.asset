@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GoldGun
   m_EditorClassIdentifier: 
   weaponPrefab: {fileID: 7682932710354099420, guid: 59de9a6487ef51d449760357527a1131, type: 3}
-  weaponCooldown: 0.2
-  weaponDamage: 5
+  weaponCooldown: 0.05
+  weaponDamage: 1
   weaponRange: 20
