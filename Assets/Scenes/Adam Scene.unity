@@ -122,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7535561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7535562}
+  m_Layer: 0
+  m_Name: shootpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7535562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535561}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.015701622, y: 0.998598, z: -0.022481227, w: -0.045279734}
+  m_LocalPosition: {x: -1.3310002, y: -0.615, z: -0.0029999986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5006358272409267954}
+  m_LocalEulerAnglesHint: {x: 2.655, y: 185.153, z: -1.682}
 --- !u!4 &50048022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1924560064267296261, guid: 5f8404c8d70519e45a7a327d802137be, type: 3}
@@ -13444,6 +13475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Scene tp
   sceneTransitionName: ruinsTpEntry
+  exitSound: {fileID: 0}
 --- !u!61 &550528234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14228,6 +14260,11 @@ Transform:
 --- !u!1 &1789067267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1601039467818896049, guid: f8c5d23d874035e49abb106a887d303c, type: 3}
+  m_PrefabInstance: {fileID: 8028174604809139444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1789067277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8035308821438315932, guid: f8c5d23d874035e49abb106a887d303c, type: 3}
   m_PrefabInstance: {fileID: 8028174604809139444}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1805167216
@@ -19240,6 +19277,7 @@ GameObject:
   - component: {fileID: 8106237954825588952}
   - component: {fileID: 6747401555905821765}
   - component: {fileID: 1863982732101141876}
+  - component: {fileID: 9008931106678406088}
   - component: {fileID: 9008931106678406087}
   m_Layer: 0
   m_Name: spider boss
@@ -19420,7 +19458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313c6cad4932398428bd6497b981fc13, type: 3}
   m_Name: 
@@ -19503,7 +19541,8 @@ Transform:
   m_LocalPosition: {x: 11.2694, y: 2.0493, z: 0}
   m_LocalScale: {x: 1.0423, y: 0.9294, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7535562}
   m_Father: {fileID: 1404063711}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5197118589008195842
@@ -19520,6 +19559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Scene2
   sceneTransitionName: WEntry
+  exitSound: {fileID: 0}
 --- !u!114 &5403871322416138801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19583,11 +19623,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8308196
+      value: 1.7763188
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4525499
+      value: -1.45251
       objectReference: {fileID: 0}
     - target: {fileID: 4513549438124435186, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_Name
@@ -20433,6 +20473,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.9969244, y: 3.3013153}
   m_EdgeRadius: 0
+--- !u!114 &9008931106678406088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386173993599730206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37b6c9b40bb4ff488fc8b7a1e037d71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1789067277}
+  rb: {fileID: 7682273272821505493}
+  anim: {fileID: 3045766419451196172}
+  poisonProjectilePrefab: {fileID: 0}
+  shootPoint: {fileID: 7535562}
+  maxHP: 200
+  currentHP: 0
+  moveSpeed: 3
+  chaseRange: 100
+  attackRange: 4
+  leapRange: 6
+  spitCooldown: 2
+  leapCooldown: 5
+  phaseTwo: 0
+  phase2MoveSpeed: 5
+  phase2SpitCooldown: 1.2
+  phase2LeapCooldown: 3.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5799675534454131434}
   - component: {fileID: 3112254711543579708}
   - component: {fileID: 7717945816700566831}
+  - component: {fileID: -787326183622962447}
   m_Layer: 0
   m_Name: GoldBullet
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 8508427429411214225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.110276, y: -20.61647, z: 0}
+  m_LocalPosition: {x: -8.428287, y: -22.591026, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149,7 +150,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!96 &5799675534454131434
 TrailRenderer:
@@ -288,7 +289,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1ba46d4ffddd15438c2adaa74e44740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
-  particleOnHitPrefabVFX: {fileID: 0}
+  moveSpeed: 40
+  particleOnHitPrefabVFX: {fileID: 1100103239531299760, guid: 9fc4a58c5b2eaf34091c0ff95b9fb51c, type: 3}
   isEnemyProjectile: 0
   projectileRange: 10
+--- !u!114 &-787326183622962447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508427429411214225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5b5e4e0f9ff3548ac8919535c26e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
