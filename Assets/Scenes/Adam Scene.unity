@@ -19278,6 +19278,7 @@ GameObject:
   - component: {fileID: 6747401555905821765}
   - component: {fileID: 1863982732101141876}
   - component: {fileID: 9008931106678406088}
+  - component: {fileID: 9008931106678406089}
   - component: {fileID: 9008931106678406087}
   m_Layer: 0
   m_Name: spider boss
@@ -19423,7 +19424,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5b5d505c1b657be4ab5349bc2c82d06f, type: 2}
   m_CullingMode: 0
@@ -20488,20 +20489,38 @@ MonoBehaviour:
   player: {fileID: 1789067277}
   rb: {fileID: 7682273272821505493}
   anim: {fileID: 3045766419451196172}
-  poisonProjectilePrefab: {fileID: 0}
+  poisonProjectilePrefab: {fileID: 8192952530372022493, guid: 3acbc785739bdc540a9d6e7060be1e76, type: 3}
   shootPoint: {fileID: 7535562}
-  maxHP: 200
-  currentHP: 0
+  visual: {fileID: 0}
+  maxHP: 247.2
+  currentHP: 200
   moveSpeed: 3
   chaseRange: 100
-  attackRange: 4
-  leapRange: 6
-  spitCooldown: 2
-  leapCooldown: 5
-  phaseTwo: 0
-  phase2MoveSpeed: 5
-  phase2SpitCooldown: 1.2
-  phase2LeapCooldown: 3.5
+  attackRange: 20
+  leapRange: 100
+  spitCooldown: 0.1
+  leapCooldown: 1
+  phaseTwo: 1
+  phase2MoveSpeed: 0.5
+  phase2SpitCooldown: 1
+  phase2LeapCooldown: 2
+  smoothFacing: 1
+  facingSpeedDegPerSec: 720
+  facingAngleOffset: 180
+--- !u!114 &9008931106678406089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386173993599730206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccf54e1f29ec354e912d096ccb0bccd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  lifetime: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
