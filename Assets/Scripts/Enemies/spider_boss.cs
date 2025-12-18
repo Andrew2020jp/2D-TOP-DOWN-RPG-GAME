@@ -12,6 +12,8 @@ public class SpiderBossAI : MonoBehaviour
     public Animator anim;
     public GameObject poisonProjectilePrefab;
     public Transform shootPoint;
+    // Visual child to rotate independently of root/animator (assign the Sprite/Renderer GameObject)
+    public Transform visual;
 
     [Header("Stats")]
     public float maxHP = 200;
@@ -27,21 +29,37 @@ public class SpiderBossAI : MonoBehaviour
     public float leapCooldown = 5f;
     private float leapTimer;
 
+    // Prevent multiple overlapping attack coroutines
+    private bool isAttacking = false;
+
     [Header("Phase 2 Settings (HP < 50%)")]
     public bool phaseTwo = false;
     public float phase2MoveSpeed = 3.5f;
     public float phase2SpitCooldown = 1.2f;
     public float phase2LeapCooldown = 3.5f;
 
+    [Header("Facing")]
+    // When visual is assigned we rotate only the visual (prevents Animator/physics conflicts)
+    public bool smoothFacing = false;
+    public float facingSpeedDegPerSec = 720f;
+    public float facingAngleOffset = 180f; // adjust so sprite's artwork forward direction matches player-facing
+
+    // Optional pathfinding component (CrystalKnight style). If present, use it for movement.
+    private EnemyPathfinding enemyPathfinding;
+
     private void Start()
     {
         currentHP = maxHP;
         currentState = BossState.Idle;
+        enemyPathfinding = GetComponent<EnemyPathfinding>();
     }
 
     private void Update()
     {
         if (player == null) return;
+
+        // Make the boss face the player every frame (rotate visual if set)
+        FacePlayer();
 
         // Phase2 check
         if (!phaseTwo && currentHP <= maxHP * 0.5f)
@@ -60,14 +78,20 @@ public class SpiderBossAI : MonoBehaviour
 
             case BossState.Chase:
                 ChasePlayer();
-                if (dist <= attackRange && spitTimer <= 0)
-                    currentState = BossState.Attack;
-                else if (dist <= leapRange && leapTimer <= 0)
+                // Only leap if player is within leapRange but outside attackRange
+                if (dist <= leapRange && dist > attackRange && leapTimer <= 0)
+                {
                     currentState = BossState.Leap;
+                }
+                else if (dist <= attackRange && spitTimer <= 0)
+                {
+                    currentState = BossState.Attack;
+                }
                 break;
 
             case BossState.Attack:
-                StartCoroutine(SpitAttack());
+                if (!isAttacking)
+                    StartCoroutine(SpitAttack());
                 break;
 
             case BossState.Leap:
@@ -76,27 +100,80 @@ public class SpiderBossAI : MonoBehaviour
         }
     }
 
-    // ----------------------- BEHAVIOUR FUNCTIONS --------------------------
+    // ----------------------- FACING --------------------------
+    void FacePlayer()
+    {
+        if (player == null) return;
+        Vector2 dir = (player.position - transform.position);
+        if (dir.sqrMagnitude <= Mathf.Epsilon) return;
 
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + facingAngleOffset;
+
+        // If a visual child is assigned, rotate only that transform to avoid animator/physics conflicts.
+        if (visual != null)
+        {
+            Quaternion targetRot = Quaternion.AngleAxis(targetAngle, Vector3.forward);
+            if (smoothFacing)
+                visual.rotation = Quaternion.RotateTowards(visual.rotation, targetRot, facingSpeedDegPerSec * Time.deltaTime);
+            else
+                visual.rotation = targetRot;
+            return;
+        }
+
+        // Fallback: rotate the root (but prefer visual approach)
+        Quaternion fallbackRot = Quaternion.AngleAxis(targetAngle, Vector3.forward);
+        if (smoothFacing)
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, fallbackRot, facingSpeedDegPerSec * Time.deltaTime);
+        else
+            transform.rotation = fallbackRot;
+    }
+
+    // ----------------------- BEHAVIOUR FUNCTIONS --------------------------
     void ChasePlayer()
     {
         anim.SetBool("Walking", true);
         Vector2 dir = (player.position - transform.position).normalized;
-        rb.MovePosition(rb.position + dir * moveSpeed * Time.deltaTime);
+
+        // If there's an EnemyPathfinding component use it (same pattern as CrystalKnightAI).
+        if (enemyPathfinding != null)
+        {
+            enemyPathfinding.MoveTo(dir);
+            return;
+        }
+
+        // Otherwise use Rigidbody2D movement as before.
+        if (rb != null)
+            rb.MovePosition(rb.position + dir * moveSpeed * Time.deltaTime);
+        else
+            transform.position = (Vector2)transform.position + dir * moveSpeed * Time.deltaTime;
     }
 
     IEnumerator SpitAttack()
     {
-        currentState = BossState.Idle;
+        isAttacking = true;
+        currentState = BossState.Attack;
+        anim.SetBool("Walking", false);
         anim.SetTrigger("Spit");
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.3f); // Wait for animation
 
-        Instantiate(poisonProjectilePrefab, shootPoint.position, shootPoint.rotation);
+        if (poisonProjectilePrefab != null && shootPoint != null)
+        {
+            // 1. Calculate direction to the player
+            Vector2 direction = (player.position - shootPoint.position).normalized;
+
+            // 2. Convert direction to a rotation (Angle) and apply offset so projectile faces correctly
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            // 3. Spawn with the calculated rotation
+            Instantiate(poisonProjectilePrefab, shootPoint.position, rotation);
+        }
 
         spitTimer = spitCooldown;
+        yield return new WaitForSeconds(0.4f);
 
-        yield return new WaitForSeconds(0.2f);
+        isAttacking = false;
         currentState = BossState.Chase;
     }
 
@@ -108,11 +185,19 @@ public class SpiderBossAI : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         Vector2 leapDirection = (player.position - transform.position).normalized;
-        rb.AddForce(leapDirection * 700f);
+        if (rb != null)
+            rb.AddForce(leapDirection * 700f);
+        else
+            transform.position = (Vector2)transform.position + leapDirection * 2f; // fallback impulse
 
         leapTimer = leapCooldown;
 
         yield return new WaitForSeconds(0.5f);
+
+        // Stops the sliding movement
+        if (rb != null)
+            rb.velocity = Vector2.zero;
+
         currentState = BossState.Chase;
     }
 
@@ -138,7 +223,7 @@ public class SpiderBossAI : MonoBehaviour
     void Die()
     {
         anim.SetTrigger("Die");
-        rb.simulated = false;
+        if (rb != null) rb.simulated = false;
         this.enabled = false;
     }
 }
