@@ -1,9 +1,10 @@
 # Introduction:
     This is a project by Andrew Wong Wey Chee, Ng Kuan Kiet and Ooi Yun Teng based on the tutorial on [this playlist on YouTube](https://youtube.com/playlist?list=PL6bqhqO0Ba776ksb3F9P_xmUMT9WvmfFT)
-    Resources and assets are taken from the tutorial and itch.io:
+    Resources and assets are taken from the tutorial and various resources online:
         1. Crystal Knight: https://daxelheart.itch.io/crystal-knight
         2. Dungeon Asset Pack https://craftpix.net/freebies/free-top-down-ruins-pixel-art/
-        3. 
+        3. BGM from pixabay https://pixabay.com/music/search/rpg/
+
 
 
 # Controls:
