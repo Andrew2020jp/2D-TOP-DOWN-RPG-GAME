@@ -1,7 +1,7 @@
 # To-do List
 1.Option Menu Ui
-2.Bgm Installing
-3.Sound Effect
+2.Bgm Installing (Done)
+3.Sound Effect (Done)
 4.Final Boss- need to defeat another boss (5 bosses)
 5.Buff -attack,cooling down time,defend,hp increase
 6.New Weapon-Spear,Gun
