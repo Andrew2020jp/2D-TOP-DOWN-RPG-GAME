@@ -11790,6 +11790,7 @@ GameObject:
   - component: {fileID: 437956653}
   - component: {fileID: 437956652}
   - component: {fileID: 437956654}
+  - component: {fileID: 437956655}
   m_Layer: 0
   m_Name: 'HoodedKnight '
   m_TagString: Untagged
@@ -11879,8 +11880,8 @@ Transform:
   m_GameObject: {fileID: 437956648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4841, y: 0.9073, z: 0}
-  m_LocalScale: {x: 0.8183343, y: 0.6661197, z: 1}
+  m_LocalPosition: {x: -3.64, y: 0.13, z: 0}
+  m_LocalScale: {x: 0.5599043, y: 0.47774103, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -11911,7 +11912,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &437956653
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11971,6 +11972,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1789067277}
   isFlipped: 1
+--- !u!114 &437956655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437956648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d94103e67af36942ad779b833634f18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackOffset: {x: 10, y: 10, z: 0}
+  attackRange: 100
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &860650497
 GameObject:
   m_ObjectHideFlags: 0
@@ -13909,11 +13928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4212968
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45302
+      value: -1.4549695
       objectReference: {fileID: 0}
     - target: {fileID: 4513549438124435186, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_Name
