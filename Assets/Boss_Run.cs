@@ -6,6 +6,7 @@ using UnityEngine;
 public class Boss_Run : StateMachineBehaviour
 {
     public float speed = 2.5f;
+    public float attackRange = 3f;
     Transform player;
     Rigidbody2D rb;
     HoodedKnightAi boss;
@@ -23,12 +24,15 @@ public class Boss_Run : StateMachineBehaviour
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newpPos=Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newpPos);
+
+        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+            animator.SetTrigger("attack");
     }
 
     // onstateexit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
-        
+        animator.ResetTrigger("attack");
     }
 
 }
