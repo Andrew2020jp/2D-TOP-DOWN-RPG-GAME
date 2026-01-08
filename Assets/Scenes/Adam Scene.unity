@@ -19265,7 +19265,6 @@ GameObject:
   - component: {fileID: 7682273272821505493}
   - component: {fileID: 3509483902470109794}
   - component: {fileID: 1884668755890616667}
-  - component: {fileID: 1890480321941437399}
   - component: {fileID: 6899522551906438720}
   - component: {fileID: 5644893216192904580}
   - component: {fileID: 6704535850143302114}
@@ -19391,31 +19390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 1
   attackRange: 10
-  enemyType: {fileID: 1890480321941437399}
+  enemyType: {fileID: 0}
   attackCooldown: 3
   stopMovingWhileAttacking: 0
---- !u!114 &1890480321941437399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35352960f42bfbc4083a053f1bbfc959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8192952530372022493, guid: 3acbc785739bdc540a9d6e7060be1e76, type: 3}
-  bulletMoveSpeed: 10
-  burstCount: 60
-  projectilesPerBurst: 12
-  angleSpread: 180
-  startingDistance: 0.3
-  timeBetweenBursts: 0.1
-  restTime: 1
-  stagger: 1
-  oscillate: 1
 --- !u!95 &3045766419451196172
 Animator:
   serializedVersion: 5
@@ -19424,7 +19401,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5b5d505c1b657be4ab5349bc2c82d06f, type: 2}
   m_CullingMode: 0
@@ -19468,7 +19445,7 @@ MonoBehaviour:
   restTime: 2
   attackRange: 10
   stopMovingWhileAttacking: 0
-  enemyType: {fileID: 1890480321941437399}
+  enemyType: {fileID: 0}
   attackCooldown: 1
 --- !u!114 &3797434190670796444
 MonoBehaviour:
@@ -19624,11 +19601,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7763188
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.45251
+      value: -1.4549695
       objectReference: {fileID: 0}
     - target: {fileID: 4513549438124435186, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_Name
@@ -20495,11 +20472,11 @@ MonoBehaviour:
   maxHP: 247.2
   currentHP: 200
   moveSpeed: 3
-  chaseRange: 100
-  attackRange: 20
-  leapRange: 100
-  spitCooldown: 0.1
-  leapCooldown: 1
+  chaseRange: 50
+  attackRange: 10
+  leapRange: 200
+  spitCooldown: 1
+  leapCooldown: 0.1
   phaseTwo: 1
   phase2MoveSpeed: 0.5
   phase2SpitCooldown: 1
