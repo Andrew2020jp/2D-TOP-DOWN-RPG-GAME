@@ -19252,6 +19252,63 @@ Transform:
   - {fileID: 50048022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2124201951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.117037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.2382154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191514424140997648, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_Name
+      value: Tree (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
 --- !u!1 &386173993599730206
 GameObject:
   m_ObjectHideFlags: 0
@@ -19601,11 +19658,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 1.7763188
       objectReference: {fileID: 0}
     - target: {fileID: 4064975037637355721, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4549695
+      value: -1.45251
       objectReference: {fileID: 0}
     - target: {fileID: 4513549438124435186, guid: fa87018eb1eaf58438be42c782d2905c, type: 3}
       propertyPath: m_Name
@@ -20473,8 +20530,8 @@ MonoBehaviour:
   currentHP: 200
   moveSpeed: 3
   chaseRange: 50
-  attackRange: 10
-  leapRange: 200
+  attackRange: 4
+  leapRange: 6
   spitCooldown: 1
   leapCooldown: 0.1
   phaseTwo: 1
@@ -20514,3 +20571,4 @@ SceneRoots:
   - {fileID: 8028174604809139444}
   - {fileID: 1404063711}
   - {fileID: 414295660}
+  - {fileID: 2124201951}
