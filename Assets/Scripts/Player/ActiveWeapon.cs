@@ -40,8 +40,13 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     {
         CurrentActiveWeapon = newWeapon;
 
+        // Get the base cooldown from the weapon
+        float baseCooldown = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
+
+        // Apply the buffed cooldown via the Stat Manager
+        timeBetweenAttacks = PlayerStatManager.Instance.GetAdjustedCooldown(baseCooldown);
+
         AttackCooldown();
-        timeBetweenAttacks = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
     }
 
     public void WeaponNull()
@@ -76,6 +81,10 @@ public class ActiveWeapon : Singleton<ActiveWeapon>
     {
         if (attackButtonDown && !isAttacking && CurrentActiveWeapon)
         {
+            // Re-calculate cooldown here in case a buff was gained mid-session
+            float baseCooldown = (CurrentActiveWeapon as IWeapon).GetWeaponInfo().weaponCooldown;
+            timeBetweenAttacks = PlayerStatManager.Instance.GetAdjustedCooldown(baseCooldown);
+
             AttackCooldown();
             (CurrentActiveWeapon as IWeapon).Attack();
         }

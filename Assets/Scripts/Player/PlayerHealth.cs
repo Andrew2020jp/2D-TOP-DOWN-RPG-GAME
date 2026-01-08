@@ -11,6 +11,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
+    [SerializeField] private float damageReductionMultiplier = 1f; // 1.0 = normal, 0.8 = 20% less damage
 
     private Slider healthSlider;
     private int currentHealth;
@@ -67,11 +68,17 @@ public class PlayerHealth : Singleton<PlayerHealth>
     {
         if (!canTakeDamage) { return; }
 
+        // Calculate reduced damage (Rounding to nearest int since your health is int)
+        int finalDamage = Mathf.RoundToInt(damageAmount * damageReductionMultiplier);
+        if (finalDamage < 1 && damageAmount > 0) finalDamage = 1; // Ensure they take at least 1 damage
+
         ScreenShakeManager.Instance.ShakeScreen();
         knockback.GetKnockedBack(hitTransform, knockBackThrustAmount);
         StartCoroutine(flash.FlashRoutine());
         canTakeDamage = false;
-        currentHealth -= damageAmount;
+
+        currentHealth -= finalDamage; // Use finalDamage here
+
         StartCoroutine(DamageRecoveryRoutine());
         UpdateHealthSlider();
         CheckIfPlayerDeath();
@@ -130,5 +137,21 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+    }
+
+    public void BuffMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        currentHealth += amount; // Heal the player for the amount gained
+        UpdateHealthSlider();
+    }
+
+    public void BuffDefense(float reductionPercent)
+    {
+        // Example: reductionPercent = 0.1f (10% reduction)
+        damageReductionMultiplier -= reductionPercent;
+
+        // Clamp it so player doesn't become invincible (min 10% damage taken)
+        if (damageReductionMultiplier < 0.1f) damageReductionMultiplier = 0.1f;
     }
 }
