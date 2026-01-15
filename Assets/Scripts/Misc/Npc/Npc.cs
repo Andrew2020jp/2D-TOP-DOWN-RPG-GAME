@@ -9,11 +9,6 @@ public class Npc : MonoBehaviour
     {
         
     }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
