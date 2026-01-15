@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         knockback.GetKnockedBack(PlayerController.Instance.transform, knockBackThrust);
         StartCoroutine(flash.FlashRoutine());
+
         StartCoroutine(CheckDetectDeathRoutine());
     }
 
@@ -41,6 +42,12 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            BossBuffs bossBuffs = GetComponent<BossBuffs>();
+            if (bossBuffs != null)
+            {
+                Debug.Log("SUCCESS: BossBuffs found! Triggering GrantBossBuffs.");
+                bossBuffs.GrantBossBuffs();
+            }
             Instantiate(deathVFXPrefab, transform.position, Quaternion.identity);
             GetComponent<PickUpSpawner>().DropItems();
             EnemyAudioController audioCtrl = GetComponent<EnemyAudioController>();

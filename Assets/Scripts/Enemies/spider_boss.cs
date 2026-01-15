@@ -76,16 +76,21 @@ public class SpiderBossAI : MonoBehaviour
                 if (dist < chaseRange) currentState = BossState.Chase;
                 break;
 
+            // Change this section in your Update() Switch
             case BossState.Chase:
                 ChasePlayer();
-                // Only leap if player is within leapRange but outside attackRange
+
+                // Check Leap first (Long range)
                 if (dist <= leapRange && dist > attackRange && leapTimer <= 0)
                 {
-                    currentState = BossState.Leap;
+                    StopMovement(); // Helper to reset velocity/pathfinding
+                    StartCoroutine(LeapAttack());
                 }
+                // Check Spit second (Close range)
                 else if (dist <= attackRange && spitTimer <= 0)
                 {
-                    currentState = BossState.Attack;
+                    StopMovement();
+                    StartCoroutine(SpitAttack());
                 }
                 break;
 
@@ -146,6 +151,13 @@ public class SpiderBossAI : MonoBehaviour
             rb.MovePosition(rb.position + dir * moveSpeed * Time.deltaTime);
         else
             transform.position = (Vector2)transform.position + dir * moveSpeed * Time.deltaTime;
+    }
+
+    void StopMovement()
+    {
+        if (rb != null) rb.velocity = Vector2.zero;
+        if (enemyPathfinding != null) enemyPathfinding.MoveTo(Vector2.zero);
+        anim.SetBool("Walking", false);
     }
 
     IEnumerator SpitAttack()

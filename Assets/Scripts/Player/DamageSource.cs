@@ -26,14 +26,20 @@ public class DamageSource : MonoBehaviour
 
         if (enemyHealth != null)
         {
-            // 1. Get the current active weapon RIGHT NOW
             MonoBehaviour currentActiveWeapon = ActiveWeapon.Instance.CurrentActiveWeapon;
 
-            // 2. Get its damage info RIGHT NOW
-            int currentDamage = (currentActiveWeapon as IWeapon).GetWeaponInfo().weaponDamage;
+            if (currentActiveWeapon != null)
+            {
+                // 1. Get the base damage from the WeaponInfo ScriptableObject
+                int baseDamage = (currentActiveWeapon as IWeapon).GetWeaponInfo().weaponDamage;
 
-            // 3. Apply that damage
-            enemyHealth.TakeDamage(currentDamage);
+                // 2. Add the buff from the Stat Manager
+                // We use Mathf.RoundToInt because Damage is an int, but buffs might be floats
+                int finalDamage = Mathf.RoundToInt(PlayerStatManager.Instance.GetAdjustedDamage(baseDamage));
+
+                // 3. Apply the buffed damage
+                enemyHealth.TakeDamage(finalDamage);
+            }
         }
     }
 }

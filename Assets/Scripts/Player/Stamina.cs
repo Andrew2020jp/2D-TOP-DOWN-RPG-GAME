@@ -9,6 +9,7 @@ public class Stamina : Singleton<Stamina>
 
     [SerializeField] private Sprite fullStaminaImage, emptyStaminaImage;
     [SerializeField] private int timeBetweenStaminaRefresh = 3;
+    [SerializeField] private GameObject staminaIconPrefab;
 
     private Transform staminaContainer;
     private int startingStamina = 3;
@@ -52,30 +53,23 @@ public class Stamina : Singleton<Stamina>
     // --- CHANGE 'private' to 'public' AND ADD A NULL CHECK ---
     public void UpdateStaminaImages()
     {
-        // Find the stamina container if the reference is lost (e.g., after scene load)
-        if (staminaContainer == null)
-        {
-            GameObject containerObject = GameObject.Find(STAMINA_CONTAINER_TEXT);
-            if (containerObject != null)
-            {
-                staminaContainer = containerObject.transform;
-            }
-            else
-            {
-                Debug.LogError("Could not find Stamina Container in the scene!");
-                return; // Exit if not found
-            }
-        }
+        if (staminaContainer == null) { /* ... keep your existing find logic ... */ }
+
+        // Use the actual number of children currently in the container 
+        // to avoid index out of bounds errors
+        int childCount = staminaContainer.childCount;
 
         for (int i = 0; i < maxStamina; i++)
         {
-            if (i <= CurrentStamina - 1)
+            // Safety check: skip if the UI hasn't caught up to the logic yet
+            if (i >= childCount) break;
+
+            Transform child = staminaContainer.GetChild(i);
+            Image image = child.GetComponent<Image>();
+
+            if (image != null)
             {
-                staminaContainer.GetChild(i).GetComponent<Image>().sprite = fullStaminaImage;
-            }
-            else
-            {
-                staminaContainer.GetChild(i).GetComponent<Image>().sprite = emptyStaminaImage;
+                image.sprite = (i <= CurrentStamina - 1) ? fullStaminaImage : emptyStaminaImage;
             }
         }
 
@@ -94,6 +88,33 @@ public class Stamina : Singleton<Stamina>
             RefreshStamina();
         }
     }
+
+    public void IncreaseMaxStamina(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            maxStamina++;
+
+            if (staminaIconPrefab != null && staminaContainer != null)
+            {
+                // Instantiate and wait a frame or force the hierarchy to update
+                GameObject newIcon = Instantiate(staminaIconPrefab, staminaContainer);
+                newIcon.name = "Stamina Image " + maxStamina;
+            }
+        }
+
+        CurrentStamina = maxStamina;
+
+        // Use a slight delay to let Unity's UI/Transform system catch up
+        StartCoroutine(UpdateUIAfterFrame());
+    }
+
+    private IEnumerator UpdateUIAfterFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        UpdateStaminaImages();
+    }
+
     /*
     private void UpdateStaminaImages()
     {

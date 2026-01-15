@@ -19252,6 +19252,63 @@ Transform:
   - {fileID: 50048022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2124201951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.117037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.2382154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571929225285533457, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7191514424140997648, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
+      propertyPath: m_Name
+      value: Tree (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef20abc91836f724fae2aaf539c29294, type: 3}
 --- !u!1 &386173993599730206
 GameObject:
   m_ObjectHideFlags: 0
@@ -19265,7 +19322,6 @@ GameObject:
   - component: {fileID: 7682273272821505493}
   - component: {fileID: 3509483902470109794}
   - component: {fileID: 1884668755890616667}
-  - component: {fileID: 1890480321941437399}
   - component: {fileID: 6899522551906438720}
   - component: {fileID: 5644893216192904580}
   - component: {fileID: 6704535850143302114}
@@ -19391,31 +19447,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roamChangeDirFloat: 1
   attackRange: 10
-  enemyType: {fileID: 1890480321941437399}
+  enemyType: {fileID: 0}
   attackCooldown: 3
   stopMovingWhileAttacking: 0
---- !u!114 &1890480321941437399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35352960f42bfbc4083a053f1bbfc959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8192952530372022493, guid: 3acbc785739bdc540a9d6e7060be1e76, type: 3}
-  bulletMoveSpeed: 10
-  burstCount: 60
-  projectilesPerBurst: 12
-  angleSpread: 180
-  startingDistance: 0.3
-  timeBetweenBursts: 0.1
-  restTime: 1
-  stagger: 1
-  oscillate: 1
 --- !u!95 &3045766419451196172
 Animator:
   serializedVersion: 5
@@ -19424,7 +19458,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386173993599730206}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5b5d505c1b657be4ab5349bc2c82d06f, type: 2}
   m_CullingMode: 0
@@ -19468,7 +19502,7 @@ MonoBehaviour:
   restTime: 2
   attackRange: 10
   stopMovingWhileAttacking: 0
-  enemyType: {fileID: 1890480321941437399}
+  enemyType: {fileID: 0}
   attackCooldown: 1
 --- !u!114 &3797434190670796444
 MonoBehaviour:
@@ -20495,11 +20529,11 @@ MonoBehaviour:
   maxHP: 247.2
   currentHP: 200
   moveSpeed: 3
-  chaseRange: 100
-  attackRange: 20
-  leapRange: 100
-  spitCooldown: 0.1
-  leapCooldown: 1
+  chaseRange: 50
+  attackRange: 4
+  leapRange: 6
+  spitCooldown: 1
+  leapCooldown: 0.1
   phaseTwo: 1
   phase2MoveSpeed: 0.5
   phase2SpitCooldown: 1
@@ -20537,3 +20571,4 @@ SceneRoots:
   - {fileID: 8028174604809139444}
   - {fileID: 1404063711}
   - {fileID: 414295660}
+  - {fileID: 2124201951}
