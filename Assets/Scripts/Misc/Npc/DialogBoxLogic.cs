@@ -5,22 +5,12 @@ using UnityEngine;
 
 public class DialogBoxLogic : MonoBehaviour
 {
-    public string popUp;
-    bool playerInRange = false;
-
-    void Start()
+    [TextArea(3, 6)]
+    public string dialogText;
+    
+    public void TriggerDialog()
     {
-        
+        PopUpSystem pop = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<PopUpSystem>();
+        pop.PopUp(dialogText);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && playerInRange)
-        {
-            PopUpSystem pop = GameObject.FindGameObjectWithTag("DialogManager").GetComponent<PopUpSystem>();
-            pop.PopUp(popUp);
-        }
-    }
-
 }

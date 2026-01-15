@@ -2246,6 +2246,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496161247}
   m_CullTransparentMesh: 0
+--- !u!1 &503937862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6742691145584691439, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+  m_PrefabInstance: {fileID: 6609680047144085437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &503937863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503937862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad90dc4151bd824ab3117d16abe8523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogText: Hello
+--- !u!114 &503937864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503937862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbaed16aff1dfec488ed88a42c1707c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509464511
 GameObject:
   m_ObjectHideFlags: 0
@@ -84822,7 +84852,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 641238318}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -96162,6 +96192,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6338302504261078506, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      propertyPath: m_Size.x
+      value: 3.0812058
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338302504261078506, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      propertyPath: m_Size.y
+      value: 3.0812058
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338302504261078506, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.01105625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6338302504261078506, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6742691145584691439, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
       propertyPath: m_Name
       value: npc_by_hana_c_0
@@ -96209,7 +96255,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6742691145584691439, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503937864}
+    - targetCorrespondingSourceObject: {fileID: 6742691145584691439, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 503937863}
   m_SourcePrefab: {fileID: 100100000, guid: 26ca18d8daba8b140addaa5358fd54ae, type: 3}
 --- !u!20 &6704389229379966933
 Camera:
