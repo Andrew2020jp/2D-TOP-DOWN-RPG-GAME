@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2010384077989447663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 83c5c9ed45d849146ae8a307650650f8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30761d57269b8284dad67ecbac4f58c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -236,8 +236,9 @@ GameObject:
   - component: {fileID: 1180199900449178525}
   - component: {fileID: 140818005408632817}
   - component: {fileID: 4749010820182615783}
-  - component: {fileID: 8604475500592494610}
   - component: {fileID: 2284135910642921042}
+  - component: {fileID: 3834761050442595303}
+  - component: {fileID: 2788582662117264617}
   m_Layer: 5
   m_Name: Active Inventory
   m_TagString: Untagged
@@ -305,18 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6f4854e167f3e4f9dada018414e827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &8604475500592494610
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526374282238298396}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!114 &2284135910642921042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +318,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2247e3fc2632b114abe0e1221522aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadedAlpla: 0.05
+  fadedAlpha: 0.05
+  fadeSpeed: 5
+  bufferZone: 30
+--- !u!225 &3834761050442595303
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526374282238298396}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &2788582662117264617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526374282238298396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2247e3fc2632b114abe0e1221522aeec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadedAlpha: 0.05
   fadeSpeed: 5
   bufferZone: 30
 --- !u!1 &656822777673950245
@@ -2325,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879a9a1764b25449b90c36a7ec3fdee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponInfo: {fileID: 0}
+  weaponInfo: {fileID: 11400000, guid: ce02c9204c0ecd14983ac68b5ac7f864, type: 2}
 --- !u!1 &7179615049333129399
 GameObject:
   m_ObjectHideFlags: 0

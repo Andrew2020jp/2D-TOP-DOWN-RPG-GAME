@@ -56,6 +56,12 @@ public class PlayerController : Singleton<PlayerController>
     private void Update()
     {
         PlayerInput();
+        // Test gold spending
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            bool success = EconomyManager.Instance.SpendGold(1);
+            Debug.Log("Spend gold success: " + success);
+        }
     }
 
     private void FixedUpdate()

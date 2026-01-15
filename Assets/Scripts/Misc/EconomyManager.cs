@@ -27,6 +27,28 @@ public class EconomyManager : Singleton<EconomyManager>
         currentGold = 0;
     }
 
+    public int GetCurrentGold()
+    {
+        return currentGold;
+    }
+
+    public bool CanAfford(int amount)
+    {
+        return currentGold >= amount;
+    }
+
+    public bool SpendGold(int amount)
+    {
+        if (currentGold < amount)
+        {
+            return false;
+        }
+
+        currentGold -= amount;
+        UpdateGoldUI();
+        return true;
+    }
+
     public void UpdateGoldUI()
     {
         if (goldText == null)

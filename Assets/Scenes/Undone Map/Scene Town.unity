@@ -1089,53 +1089,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &188507557
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 188507558}
-  - component: {fileID: 188507559}
-  m_Layer: 0
-  m_Name: DialogManager
-  m_TagString: DialogManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &188507558
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188507557}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2022183018}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &188507559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188507557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4bb2a6d9b131c34fbb08fce3f5b02aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpBox: {fileID: 1156046899}
-  animator: {fileID: 1156046901}
-  popUpText: {fileID: 167577690}
 --- !u!1 &222063857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +2612,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 18078152020347848, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1083398425244050224, guid: e4e29e057425c734eae802124d67ee5b, type: 3}
       propertyPath: weaponInfo
       value: 
@@ -85160,7 +85117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2247e3fc2632b114abe0e1221522aeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadedAlpla: 0.05
+  fadedAlpha: 0.05
   fadeSpeed: 5
   bufferZone: 30
 --- !u!225 &805982678
@@ -87477,6 +87434,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 5380616394120952180, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1156046901}
+    - target: {fileID: 5380616394120952180, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
+      propertyPath: popUpBox
+      value: 
+      objectReference: {fileID: 1156046899}
+    - target: {fileID: 5380616394120952180, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
+      propertyPath: popUpText
+      value: 
+      objectReference: {fileID: 167577690}
     - target: {fileID: 6782033876791811949, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -87519,10 +87488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6782033876791811949, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 188507558}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
 --- !u!1001 &1314071473
@@ -95277,11 +95243,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &2022183018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6782033876791811949, guid: 60bed2efd2c374c41851179bc69df37a, type: 3}
-  m_PrefabInstance: {fileID: 1301795867}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2059876213
 GameObject:
   m_ObjectHideFlags: 0
