@@ -21,14 +21,14 @@ public class HoodedKnightWeapon : MonoBehaviour
 
         if (colInfo == null) return;
 
-        PlayerHealth playerHealth = colInfo.GetComponent<PlayerHealth>();
-        if (playerHealth == null)
+        PlayerHealth PlayerHealth = colInfo.GetComponent<PlayerHealth>();
+        if (PlayerHealth == null)
         {
             Debug.LogWarning("Hit object has no PlayerHealth!", colInfo.gameObject);
             return;
         }
 
-        playerHealth.TakeDamage(attackDamage, transform);
+        PlayerHealth.TakeDamage(attackDamage, transform);
     }
 
 }
