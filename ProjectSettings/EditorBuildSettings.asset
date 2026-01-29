@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene2.unity
     guid: 23dac81d7bf8c754483cae8079ec9859
+  - enabled: 1
+    path: Assets/Scenes/Adam Scene small boss.unity
+    guid: c01ac8eb691e8094fb1ec561679e8693
+  - enabled: 1
+    path: Assets/Scenes/Adam Scene.unity
+    guid: 5ac7992c8e2ede342b603035a27b41ac
   - enabled: 0
     path: Assets/Scenes/Undone Map/Scene Basement.unity
     guid: a2909c92faf153747a3652f2121f2559
