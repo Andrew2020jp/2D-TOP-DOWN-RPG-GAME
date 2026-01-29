@@ -1,33 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GoldGun : MonoBehaviour, IWeapon
 {
     [SerializeField] private WeaponInfo weaponInfo;
     [SerializeField] private GameObject goldBullet;
     [SerializeField] private Transform bulletSpawnPoint;
-    //public WeaponAudioController audioController;
+    [SerializeField] private int goldCostPerShot = 1;
 
     readonly int TRIGGER_HASH = Animator.StringToHash("Trigger");
 
     private Animator myAnimator;
-    
+
     private void Awake()
     {
-        myAnimator = GetComponent<Animator>();    
+        myAnimator = GetComponent<Animator>();
     }
 
     public void Attack()
     {
-        myAnimator.SetTrigger(TRIGGER_HASH);
-        GameObject newBullet = Instantiate(goldBullet, bulletSpawnPoint.position, ActiveWeapon.Instance.transform.rotation);
-        newBullet.GetComponent<Projectile>().UpdateProjectileRange(weaponInfo.weaponRange);
-        /*if (audioController != null)
+        // ❌ Not enough gold → stop
+        if (!EconomyManager.Instance.SpendGold(goldCostPerShot))
         {
-            audioController.PlayAttackSound();
+            Debug.Log("Not enough gold to fire!");
+            return;
         }
-        */
+
+        // ✅ Fire
+        myAnimator.SetTrigger(TRIGGER_HASH);
+
+        GameObject newBullet = Instantiate(
+            goldBullet,
+            bulletSpawnPoint.position,
+            ActiveWeapon.Instance.transform.rotation
+        );
+
+        newBullet
+            .GetComponent<Projectile>()
+            .UpdateProjectileRange(weaponInfo.weaponRange);
     }
 
     public WeaponInfo GetWeaponInfo()

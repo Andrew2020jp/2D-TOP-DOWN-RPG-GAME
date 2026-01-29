@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class EconomyManager : Singleton<EconomyManager>
@@ -10,22 +8,49 @@ public class EconomyManager : Singleton<EconomyManager>
 
     const string COIN_AMOUNT_TEXT = "Gold Amount Text";
 
+    // =========================
+    // GOLD API
+    // =========================
+
+    public int CurrentGold => currentGold;
+
+    // ✅ NEW (recommended)
+    public void AddGold(int amount)
+    {
+        currentGold += amount;
+        UpdateGoldUI();
+    }
+
+    // ✅ OLD (kept so PickUp.cs DOES NOT BREAK)
     public void UpdateCurrentGold()
     {
-        currentGold += 1;
+        AddGold(1);
+    }
 
-        if (goldText == null)
-        {
-            goldText = GameObject.Find(COIN_AMOUNT_TEXT).GetComponent<TMP_Text>();
-        }
+    public bool CanSpendGold(int amount)
+    {
+        return currentGold >= amount;
+    }
 
-        goldText.text = currentGold.ToString("D3");
+    public bool SpendGold(int amount)
+    {
+        if (currentGold < amount)
+            return false;
+
+        currentGold -= amount;
+        UpdateGoldUI();
+        return true;
     }
 
     public void ResetGold()
     {
         currentGold = 0;
+        UpdateGoldUI();
     }
+
+    // =========================
+    // UI
+    // =========================
 
     public void UpdateGoldUI()
     {
