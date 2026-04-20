@@ -60,8 +60,8 @@ Please face the problems by yourself and create your own solutions instead of co
 - **Crystal Knight / クリスタルナイト** — Shoots a curtain of bullets / 弾幕を放つ遠距離ボス  
 - **Slime Queen / スライムクイーン** — Shoots globs, defeated after ten attacks / 粘液弾を放つ。10回攻撃後に撃破  
 - **Slime King / スライムキング** — Shrinks and spawns behind player / 縮小してプレイヤー背後に出現する近接ボス  
-- **Demons / デーモン** — Melee bosses, 1v4 battle / 近接型ボス、1対4戦闘  
-
+- **Ghosts / デーモン** — Melee bosses, 1v5 battle / 近接型ボス、1対5戦闘  
+5
 ---
 ## Additional Notice / 追加注意事項
 
