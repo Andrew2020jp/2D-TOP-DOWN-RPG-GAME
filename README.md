@@ -63,6 +63,13 @@ Please face the problems by yourself and create your own solutions instead of co
 - **Demons / デーモン** — Melee bosses, 1v4 battle / 近接型ボス、1対4戦闘  
 
 ---
+## Additional Notice / 追加注意事項
+
+Some resources used in this demo may come from publicly available tutorials and free asset sources.
+If any creator requires proper credit, modification, or removal, please contact us and we will respond promptly.
+
+本デモでは、チュートリアルおよび公開フリー素材を一部使用しています。
+クレジット表記の追加・修正・削除をご希望の権利者様は、ご連絡いただければ速やかに対応いたします。
 
 ## Thank You / ありがとうございました
 
