@@ -1,10 +1,10 @@
 # Introduction:
-    This is a project by Andrew Wong Wey Chee, Ng Kuan Kiet and Ooi Yun Teng based on the tutorial on [this playlist on YouTube](https://youtube.com/playlist?list=PL6bqhqO0Ba776ksb3F9P_xmUMT9WvmfFT)
+    This is a project by Andrew Wong Wey Chee, Ng Kuan Kiet ,Ooi Yun Teng,Adam Chong Zhi Hui based on the tutorial on [this playlist on YouTube](https://youtube.com/playlist?list=PL6bqhqO0Ba776ksb3F9P_xmUMT9WvmfFT)
     Resources and assets are taken from the tutorial and various resources online:
         1. Crystal Knight: https://daxelheart.itch.io/crystal-knight
         2. Dungeon Asset Pack https://craftpix.net/freebies/free-top-down-ruins-pixel-art/
         3. BGM from pixabay https://pixabay.com/music/search/rpg/
-
+        4. Resources(sword,character.etc) https://youtube.com/playlist?list=PL6bqhqO0Ba776ksb3F9P_xmUMT9WvmfFT
 
 
 # Controls:
@@ -17,6 +17,7 @@
         Staff: Ranged, can bypass walls and ponds
         Bow: Ranged, cannot bypass walls and ponds
         Broadsword: Very high Damage, very high Cooldown
+        Gold Gun — Spend coins to fire shots
 
 # Enemy Type (**WARNING: CONTAINS SPOILERS**):
     ## Normal Enemy:
