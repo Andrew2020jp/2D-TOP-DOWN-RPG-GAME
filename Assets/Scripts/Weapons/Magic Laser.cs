@@ -62,9 +62,7 @@ public class MagicLaser : MonoBehaviour
 
     private void LaserFaceMouse()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        Vector3 direction = transform.position - mousePosition;
-        transform.right = -direction;
+        // aims with mouse or gamepad right stick
+        transform.right = AimInput.GetAimDirection(transform.position);
     }
 }

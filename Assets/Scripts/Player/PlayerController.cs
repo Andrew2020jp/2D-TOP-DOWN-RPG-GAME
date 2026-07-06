@@ -112,10 +112,9 @@ public class PlayerController : Singleton<PlayerController>
 
     private void AdjustPlayerFacingDirection()
     {
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 aimDirection = AimInput.GetAimDirection(transform.position);
 
-        if (mousePos.x < playerScreenPoint.x)
+        if (aimDirection.x < 0f)
         {
             mySpriteRender.flipX = true;
             facingLeft = true;
