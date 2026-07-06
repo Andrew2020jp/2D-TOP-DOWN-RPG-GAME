@@ -8,16 +8,21 @@ using Cinemachine;
 public class PlayerHealth : Singleton<PlayerHealth>
 {
     public bool isDead { get; private set; }
+    public bool IsAtFullHealth { get { return currentHealth >= maxHealth; } }
+    public bool IsShieldActive { get; private set; }
+
     [SerializeField] private int maxHealth = 3;
     [SerializeField] private float knockBackThrustAmount = 10f;
     [SerializeField] private float damageRecoveryTime = 1f;
     [SerializeField] private float damageReductionMultiplier = 1f; // 1.0 = normal, 0.8 = 20% less damage
+    [SerializeField] private Color shieldTintColor = new Color(0.4f, 0.85f, 1f, 1f);
 
     private Slider healthSlider;
     private int currentHealth;
     private bool canTakeDamage = true;
     private Knockback knockback;
     private Flash flash;
+    private SpriteRenderer spriteRenderer;
 
     public CinemachineVirtualCamera vcam;
     public GameObject player;
@@ -32,6 +37,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
 
         flash = GetComponent<Flash>();
         knockback = GetComponent<Knockback>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -64,9 +70,24 @@ public class PlayerHealth : Singleton<PlayerHealth>
         }
     }
 
+    public void ActivateShield(float duration)
+    {
+        if (IsShieldActive) { return; }
+        StartCoroutine(ShieldRoutine(duration));
+    }
+
+    private IEnumerator ShieldRoutine(float duration)
+    {
+        IsShieldActive = true;
+        spriteRenderer.color = shieldTintColor;
+        yield return new WaitForSeconds(duration);
+        spriteRenderer.color = Color.white;
+        IsShieldActive = false;
+    }
+
     public void TakeDamage(int damageAmount, Transform hitTransform)
     {
-        if (!canTakeDamage) { return; }
+        if (!canTakeDamage || IsShieldActive) { return; }
 
         // Calculate reduced damage (Rounding to nearest int since your health is int)
         int finalDamage = Mathf.RoundToInt(damageAmount * damageReductionMultiplier);

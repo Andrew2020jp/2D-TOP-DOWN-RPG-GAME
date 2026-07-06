@@ -51,6 +51,9 @@ public class SlimeKingAI : MonoBehaviour
 
     private void Update()
     {
+        // player is destroyed a moment after death; stop acting until the scene reloads
+        if (player == null) { return; }
+
         if (!isTeleporting)
         {
             if(currentHealth <= spawnHealthThreshold && !hasSpawnedSlimes)

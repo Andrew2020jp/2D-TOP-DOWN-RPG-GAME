@@ -35,12 +35,13 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+        SlimeKingAI slimeKing = other.gameObject.GetComponent<SlimeKingAI>();
         Indestructible indestructible = other.gameObject.GetComponent<Indestructible>();
         PlayerHealth player = other.gameObject.GetComponent<PlayerHealth>();
 
-        if (!other.isTrigger && (enemyHealth || indestructible || player))
+        if (!other.isTrigger && (enemyHealth || slimeKing || indestructible || player))
         {
-            if ((player && isEnemyProjectile) || (enemyHealth && !isEnemyProjectile)){
+            if ((player && isEnemyProjectile) || ((enemyHealth || slimeKing) && !isEnemyProjectile)){
                 player?.TakeDamage(1, transform);
                 Instantiate(particleOnHitPrefabVFX, transform.position, transform.rotation);
                 Destroy(gameObject);

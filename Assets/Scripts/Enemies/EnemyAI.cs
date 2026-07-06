@@ -42,6 +42,9 @@ public class EnemyAI : MonoBehaviour
 
     private void MovementStateControl()
     {
+        // player is destroyed a moment after death; stop chasing until the scene reloads
+        if (PlayerController.Instance == null) { return; }
+
         switch (state)
         {
             default:

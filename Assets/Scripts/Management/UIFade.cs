@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,7 @@ public class UIFade : Singleton<UIFade>
     }
 
     public void FadeToClear() {
-        if (fadeRoutine == null)
+        if (fadeRoutine != null)
         {
             StopCoroutine(fadeRoutine);
         }

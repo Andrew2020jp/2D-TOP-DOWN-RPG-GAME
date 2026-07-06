@@ -23,8 +23,9 @@ public class DamageSource : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+        SlimeKingAI slimeKing = other.gameObject.GetComponent<SlimeKingAI>();
 
-        if (enemyHealth != null)
+        if (enemyHealth != null || slimeKing != null)
         {
             MonoBehaviour currentActiveWeapon = ActiveWeapon.Instance.CurrentActiveWeapon;
 
@@ -38,7 +39,14 @@ public class DamageSource : MonoBehaviour
                 int finalDamage = Mathf.RoundToInt(PlayerStatManager.Instance.GetAdjustedDamage(baseDamage));
 
                 // 3. Apply the buffed damage
-                enemyHealth.TakeDamage(finalDamage);
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(finalDamage);
+                }
+                else
+                {
+                    slimeKing.TakeDamage(finalDamage);
+                }
             }
         }
     }

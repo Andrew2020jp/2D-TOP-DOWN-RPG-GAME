@@ -34,6 +34,14 @@ public class Pickup : MonoBehaviour
 
     private void Update()
     {
+        // player is destroyed a moment after death; stop homing until the scene reloads
+        if (PlayerController.Instance == null)
+        {
+            moveDir = Vector3.zero;
+            moveSpeed = 0;
+            return;
+        }
+
         Vector3 playerPos = PlayerController.Instance.transform.position;
 
         if (Vector3.Distance(transform.position, playerPos) < pickUpDistance)
